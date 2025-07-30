@@ -13,6 +13,37 @@ This project predicts flight demand and recommends **optimal seat prices** to he
 - 💰 Recommends the **best seat price** for revenue maximization
 
 ---
+## 🧠 ML Model Details
+
+- Model: `XGBoostRegressor`
+- Tuning: `Optuna` used to optimize parameters like learning rate, max depth, etc.
+- Input Features:
+  - Airline (encoded)
+  - Class (Economy/Business)
+  - Duration (in minutes)
+  - Departure Hour
+  - Arrival Hour
+  - Route (encoded)
+- Output: Predicted passenger **demand**
+- Revenue = `Seat Price × Predicted Demand`
+
+---
+
+## 📈 Sample Output
+
+```python
+Input:
+{
+    'airline': 1,
+    'class': 1,
+    'duration_mins': 150,
+    'dep_hour': 9,
+    'arr_hour': 11,
+    'route': 14
+}
+
+Prediction:
+Predicted Demand: 125.55 passengers
 
 ## 📦 Installation
 
